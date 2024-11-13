@@ -31,7 +31,8 @@ export function Features() {
   });
 
   return (
-    <section ref={ref} className="py-32 bg-gradient-to-b from-blue-900 to-blue-800">
+    <section ref={ref} className="py-32 relative overflow-hidden features-section">
+      <div className="features-pattern absolute inset-0 opacity-5"></div>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -45,7 +46,7 @@ export function Features() {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="glass-card overflow-hidden group"
+              className="features-card overflow-hidden group"
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -55,9 +56,9 @@ export function Features() {
                 />
               </div>
               <div className="p-8">
-                <feature.Icon className="w-12 h-12 text-blue-400 mb-4" />
-                <h3 className="text-2xl font-bold mb-2 text-white">{feature.title}</h3>
-                <p className="text-blue-100">{feature.description}</p>
+                <feature.Icon className="w-12 h-12 text-blue-500 mb-4" />
+                <h3 className="text-2xl font-bold mb-2 text-blue-900">{feature.title}</h3>
+                <p className="text-blue-700">{feature.description}</p>
               </div>
             </motion.div>
           ))}
